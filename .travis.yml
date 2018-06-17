@@ -7,6 +7,6 @@ jdk:
 addons:
   sonarcloud:
     organization: jangchulwoon-github
-    token: sonarcloud
+    token: $sonarcloud
 script:
 - mvn clean install sonar:sonar
