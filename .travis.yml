@@ -1,0 +1,9 @@
+dist: trusty
+sudo: required
+jdk:
+- oraclejdk8
+addons:
+  sonarcloud:
+    organization: jangchulwoon-github
+script:
+- mvn clean install sonar:sonar
