@@ -1,1 +1,12 @@
 language: java
+
+dist: trusty
+sudo: required
+jdk:
+- oraclejdk8
+addons:
+  sonarcloud:
+    organization: jangchulwoon-github
+    token: sonarcloud
+script:
+- mvn clean install sonar:sonar
