@@ -11,18 +11,10 @@ public class Server {
     private static final int PORT = 8080;
 
     public static void main(String[] args) {
-        try {
-            ServerSocket serverSocket = new ServerSocket(PORT);
+        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             Socket socket = serverSocket.accept(); // block
-            try {
-                OutputStream stream = socket.getOutputStream();
-                stream.write("helloWorld".getBytes());
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                socket.close();
-            }
-
+            OutputStream stream = socket.getOutputStream();
+            stream.write("helloWorld".getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
