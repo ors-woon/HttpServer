@@ -1,9 +1,8 @@
-language: java
-
 dist: trusty
 sudo: required
 jdk:
-- oraclejdk8
+- openjdk8
+
 addons:
   sonarcloud:
     organization: jangchulwoon-github
