@@ -11,8 +11,7 @@ public class Server {
     private static final int PORT = 8080;
 
     public static void main(String[] args) {
-        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
-            Socket socket = serverSocket.accept(); // block
+        try (Socket socket  = new ServerSocket(PORT).accept()) {
             OutputStream stream = socket.getOutputStream();
             stream.write("helloWorld".getBytes());
         } catch (IOException e) {
